@@ -73,3 +73,36 @@ CREATE Table SocialMedia(
     id         SERIAL PRIMARY KEY,
     content    VARCHAR(500)
 );
+
+INSERT INTO Merchant(name) VALUES ('ValueStore');
+INSERT INTO Merchant(name) VALUES ('DelhiMetro');
+INSERT INTO Merchant(name) VALUES ('Zone M');
+INSERT INTO Merchant(name) VALUES ('Mobile HUB');
+INSERT INTO Merchant(name) VALUES ('W-Mobile');
+INSERT INTO Merchant(name) VALUES ('Imagine Store');
+INSERT INTO Merchant(name) VALUES ('CELLSOUK');
+INSERT INTO Merchant(name) VALUES ('Deccan Hub');
+INSERT INTO Merchant(name) VALUES ('TRUSTSELL');
+INSERT INTO Merchant(name) VALUES ('AB Tech');
+INSERT INTO Merchant(name) VALUES ('India Mobiles');
+INSERT INTO Merchant(name) VALUES ('DIGITAL STORE');
+INSERT INTO Merchant(name) VALUES ('BCPL');
+INSERT INTO Merchant(name) VALUES ('Fortune LifeStyle');
+INSERT INTO Merchant(name) VALUES ('Shriram Communications');
+
+
+INSERT INTO Product(name, category) VALUES ('Samsung S5, mobile');
+INSERT INTO Product(name, category) VALUES ('Iphone 5S, mobile');
+INSERT INTO Product(name, category) VALUES ('Moto G, mobile');
+INSERT INTO Product(name, category) VALUES ('Sony Xperia Z, mobile');
+INSERT INTO Product(name, category) VALUES ('Dell, laptop');
+INSERT INTO Product(name, category) VALUES ('Mac, laptop');
+INSERT INTO Product(name, category) VALUES ('Vaio, laptop');
+INSERT INTO Product(name, category) VALUES ('Lenovo, laptop');
+INSERT INTO Product(name, category) VALUES ('Adidas, shoe');
+INSERT INTO Product(name, category) VALUES ('Nike, shoe');
+INSERT INTO Product(name, category) VALUES ('Reebok, shoe');
+INSERT INTO Product(name, category) VALUES ('Puma, shoe');
+
+
+
