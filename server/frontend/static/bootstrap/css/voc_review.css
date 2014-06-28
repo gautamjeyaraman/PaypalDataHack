@@ -1,0 +1,42 @@
+.center-align{
+text-align:center;
+}
+
+.reviewContent{
+padding: 10px;
+min-height: 50px;
+margin-right: -10px;
+margin-left: -10px;
+}
+
+.glyphicon-star{
+color: #E3CF7A;
+}
+
+.glyphicon-star-empty{
+color:#aaa;
+}
+
+.header{
+font-weight:bold;
+text-align:center;
+}
+
+.evenDiv{
+background:#f5f5f5;
+}
+
+.leftSideContent{
+float:left;
+}
+
+em{
+background-color: rgba(0,255,0, 0.5);
+padding: 3px;
+border-radius: 5px;
+color: #008000!important;
+}
+
+body{
+background-color:#fff;
+}
