@@ -90,19 +90,19 @@ INSERT INTO Merchant(name) VALUES ('BCPL');
 INSERT INTO Merchant(name) VALUES ('Fortune LifeStyle');
 INSERT INTO Merchant(name) VALUES ('Shriram Communications');
 
+INSERT INTO Product(name, category) VALUES ('Samsung S5', 'mobile');
+INSERT INTO Product(name, category) VALUES ('Iphone 5S', 'mobile');
+INSERT INTO Product(name, category) VALUES ('Moto G', 'mobile');
+INSERT INTO Product(name, category) VALUES ('Sony Xperia Z', 'mobile');
+INSERT INTO Product(name, category) VALUES ('Dell', 'laptop');
+INSERT INTO Product(name, category) VALUES ('Mac', 'laptop');
+INSERT INTO Product(name, category) VALUES ('Vaio', 'laptop');
+INSERT INTO Product(name, category) VALUES ('Lenovo', 'laptop');
+INSERT INTO Product(name, category) VALUES ('Adidas', 'shoe');
+INSERT INTO Product(name, category) VALUES ('Nike', 'shoe');
+INSERT INTO Product(name, category) VALUES ('Reebok', 'shoe');
+INSERT INTO Product(name, category) VALUES ('Puma', 'shoe');
 
-INSERT INTO Product(name, category) VALUES ('Samsung S5, mobile');
-INSERT INTO Product(name, category) VALUES ('Iphone 5S, mobile');
-INSERT INTO Product(name, category) VALUES ('Moto G, mobile');
-INSERT INTO Product(name, category) VALUES ('Sony Xperia Z, mobile');
-INSERT INTO Product(name, category) VALUES ('Dell, laptop');
-INSERT INTO Product(name, category) VALUES ('Mac, laptop');
-INSERT INTO Product(name, category) VALUES ('Vaio, laptop');
-INSERT INTO Product(name, category) VALUES ('Lenovo, laptop');
-INSERT INTO Product(name, category) VALUES ('Adidas, shoe');
-INSERT INTO Product(name, category) VALUES ('Nike, shoe');
-INSERT INTO Product(name, category) VALUES ('Reebok, shoe');
-INSERT INTO Product(name, category) VALUES ('Puma, shoe');
-
-
-
+import random
+for i in range(0,15):
+    print str(random.randint(34500, 37000))+" "+str(random.randint(43000, 46000))+" "+str(random.randint(13000, 14500))+" "+str(random.randint(27000, 28500))+" "+str(random.randint(48000, 52000))+" "+str(random.randint(68000, 72000))+" "+str(random.randint(45500, 47000))+" "+str(random.randint(59000, 62500))+" "+str(random.randint(4000, 4999))+" "+str(random.randint(5000, 6499))+" "+str(random.randint(4500, 5499))+" "+str(random.randint(2000, 2999))
