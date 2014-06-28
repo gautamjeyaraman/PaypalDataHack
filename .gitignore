@@ -1,0 +1,21 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+
+target/
+*.prefs
+*.project
+*.classpath
+
+# Temp files
+*.*~
