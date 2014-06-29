@@ -11,12 +11,18 @@ class IndexHandler(BaseHandler, DatabaseMixin):
     @defer.inlineCallbacks
     def get(self):
         db = PostgresDatabase(self)
-        Merchant_lists = self.database.get_list_of_merchant()
+        Merchant_lists = yield self.database.get_list_of_merchant()
         self.render("voc_dashboard.html", Merchant_lists = Merchant_lists)
-        
+
+class MerchentDashBoarHandler(BaseHandler, DatabaseMixin):
+    is_MerchentDashBoarHandler = True
+           
     @defer.inlineCallbacks
-    def Merchant_page(self):
-        self.render("merchant_page.html")
+    def Merchant_page(self, merchant_id):
+        db = PostgresDatabase(self)
+        female_customer = yield self.database.get_female_customer_for_merchant(merchant_id)
+        male_customer = yield self.database.get_male_customer_for_merchant(merchant_id)
+        self.render("merchant_page.html", female_customer = female_customer, male_customer = male_customer)
         
         
 

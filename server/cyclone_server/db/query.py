@@ -431,5 +431,15 @@ _GET_ARTICLE_WITH_DATE_RANGE =\
     ' where a.article_date::date = %s ORDER BY a.article_date LIMIT 1);'
     
 _GET_LIST_OF_MERCHANT =\
-    'SELECT * FROM Merchant;'   
+    'SELECT * FROM Merchant;'
+    
+_GET_FEMALE_CUSTOMER_FOR_MERCHANT =\
+     "Select count(*) from Merchant m inner join MerchantProduct mp on mp.merchantid = m.id inner join"\
+     "TransactionHistory th on th.merchant_product_id = mp.productId inner join Person p on p.id = th.user_id"\
+     " and p.sex = 'female' where m.id = %s;"
+     
+_GET_MALE_CUSTOMER_FOR_MERCHANT =\
+     "Select count(*) from Merchant m inner join MerchantProduct mp on mp.merchantid = m.id inner join"\
+     "TransactionHistory th on th.merchant_product_id = mp.productId inner join Person p on p.id = th.user_id"\
+     " and p.sex = 'male' where m.id = %s;"
 

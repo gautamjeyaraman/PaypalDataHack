@@ -974,9 +974,21 @@ class PostgresDatabase(object):
         l = []
         if rows:
             for row in rows:
-                l.append({'id': row.id, 'merchant_name': name,
-                         'merchant_sentiment' : sentiment, 'merchant_count' :count})
+                l.append({'id': row.id, 'merchant_name': row.name,
+                         'merchant_sentiment' : row.sentiment, 'merchant_count' :row.count})
         return l
+        
+    def get_female_customer_for_merchant(self,id):
+        return self.connection.runQuery(
+            query._GET_FEMALE_CUSTOMER_FOR_MERCHANT, (id,)).\
+            addCallback(lambda x : x[0])
+            
+    def get_male_customer_for_merchant(self,id):
+        return self.connection.runQuery(
+            query._GET_MALE_CUSTOMER_FOR_MERCHANT, (id,)).\
+            addCallback(lambda x : x[0])
+            
+    
                 
     
 

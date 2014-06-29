@@ -71,7 +71,13 @@
 	
     <div class="container">
 		<div class="row">
-
+        {% if Merchant_lists %}
+            {% for merchant in Merchant_lists %}
+                <div class="span6">
+                    <a class=" btn btn-primary" href="/merchant/{{merchant['id']}}">{{ merchant['merchant_name']}}</a>
+                </div>
+            {% end %}
+        {% end %}
 
         </div>
 	</div><!--/container-->
