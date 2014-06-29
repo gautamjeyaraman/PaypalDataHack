@@ -4,9 +4,10 @@ from twisted.python import log
 import cyclone
 from cyclone_server.db import mixin
 from cyclone_server import utils 
-from cyclone_server.utils import BaseHandler, HTTPBasic
+from cyclone_server.utils import BaseHandler
 from cyclone_server.db.mixin import DatabaseMixin
 from cyclone_server import config
+from twisted.internet import defer
 
 class APIBase(BaseHandler, DatabaseMixin):
     no_xsrf = True
@@ -25,7 +26,6 @@ class APIBase(BaseHandler, DatabaseMixin):
         return self.write(json.dumps(d, sort_keys=True, indent=4))
 
 class AuthCheck(APIBase):
-    @HTTPBasic
     def get(self):
         user = self.current_user
         display_name = user.display_name
@@ -48,4 +48,11 @@ class AuthCheck(APIBase):
                 self.urbanairship.register(device_token)
         return self.write_json(response_dict)
 
+
+class CollaborativeFilteringHandler(APIBase):
+    @defer.inlineCallbacks
+    def get(self):
+        merchant_id = self.get_argument('merchant_id')
+        productNamesList = yield self.database.get_merchant_product_list_by_merchant_id(merchant_id)
+        defer.returnValue(self.write_json(productNamesList))
 

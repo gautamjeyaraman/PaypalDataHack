@@ -1,6 +1,7 @@
 import string
 from cyclone.web import URLSpec
 from cyclone_server import views
+from cyclone_server import api
 
 
 API_VERSIONS = ['v0.1.0', 'latest']
@@ -28,5 +29,6 @@ def munge_route_list(rl):
 
 
 routes = munge_route_list([
-    URLSpec(r'/', views.IndexHandler, name='home')
+    URLSpec(r'/', views.IndexHandler, name='home'),
+    APIURLSpec(r'/api/$apiver/collaborative/filtering', api.CollaborativeFilteringHandler)
 ])
