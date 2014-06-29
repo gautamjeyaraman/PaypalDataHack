@@ -429,3 +429,7 @@ _GET_ARTICLE_WITH_DATE_RANGE =\
     ' sentence_id, ase.lexicon_acq, ase.lexicon_vnsp, ase.lexicon_nc, ase.lexicon_job FROM Article a'\
     ' INNER JOIN ArticleSentence ase ON a.id = ase.article_id WHERE a.id = (Select id from article'\
     ' where a.article_date::date = %s ORDER BY a.article_date LIMIT 1);'
+    
+_GET_LIST_OF_MERCHANT =\
+    'SELECT * FROM Merchant;'   
+
