@@ -6,9 +6,6 @@ import opennlp.tools.sentdetect.SentenceModel;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Created by vinays on 10/02/14.
- */
 public class SentenceTokenizer {
     private static SentenceTokenizer sentenceTokenizer = null;
 

@@ -25,28 +25,6 @@ class APIBase(BaseHandler, DatabaseMixin):
         self.set_header("Content-Type", "application/json")
         return self.write(json.dumps(d, sort_keys=True, indent=4))
 
-class AuthCheck(APIBase):
-    def get(self):
-        user = self.current_user
-        display_name = user.display_name
-        if display_name is None:
-            display_name = 'Default User'
-        response_dict = {
-            'authenticated': True,
-            'user_id': user._id,
-            'email': user.email,
-            'display_name': user.display_name,
-            'user_name': user.user_name,
-            'user_guid': user.user_guid
-        }
-        device_token = self.get_argument('deviceToken', None)
-        if device_token:
-            isapns = self.get_argument('is_apns', None)
-            log.msg('adding device token %s' % (device_token,))
-            self.database.add_device_token(device_token, isapns, user)
-            if len(device_token) == 64:
-                self.urbanairship.register(device_token)
-        return self.write_json(response_dict)
 
 
 class CollaborativeFilteringHandler(APIBase):

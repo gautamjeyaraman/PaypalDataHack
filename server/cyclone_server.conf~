@@ -2,7 +2,6 @@
 debug = true
 xheaders = false
 xsrf_cookies = true
-cookie_secret = WlApyA3PQsyLg/w8Cji/m4RZTBmk7UI6sthj4RtaAPU=
 enable_logging = true
 merge_files = false
 enable_caching = yes
@@ -19,56 +18,8 @@ username = foo
 password = bar
 poolsize = 10
 
-#Bit.ly access token
-[bitly]
-enabled = yes
-key = b787ab61c81193ee169965c078480db1a7263af6
-
 [frontend]
 locale_path   = frontend/locale
 static_path   = frontend/static
 template_path = frontend/template
 project_selection = no
-
-#SearchEngine
-[search_engine]
-host                		= localhost
-port                		= 9200
-index       	    		= dqdev
-document_type       		= doc
-project_type	    		= prj
-collaborator_type   		= docusr
-user_type	        	= usr
-project_collaborator_type 	= prjusr
-document_meta_type       	= docmeta
-watchword_type			= watchkw
-disquery_type       		= dq
-disquery_note_type  		= dqnote 
-feed_host			= localhost
-feed_port			= 9200 
-subscription_index		= feedlist
-subscription_type		= feedmeta
-user_subscription_type		= userfeed
-feeditem_index			= feed
-feeditem_type			= item
-voc_host			= localhost
-voc_port			= 9200 
-voc_index		= vocdev
-review_type		= doc
-
-#neo4j config
-[neo4j]
-host = 127.0.0.1
-port = 7474
-
-[redis]
-enabled = yes
-host = 127.0.0.1
-port = 6379
-dbid = 0
-poolsize = 10
-
-
-#Jobs
-[scheduled_jobs]
-jobs = []

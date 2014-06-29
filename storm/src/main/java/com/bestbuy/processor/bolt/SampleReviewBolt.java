@@ -11,9 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
-/**
- * Created by vinays on 12/02/14.
- */
+
 public class SampleReviewBolt extends BaseRichBolt {
     private OutputCollector _collector;
     private Map conf;
@@ -32,12 +30,6 @@ public class SampleReviewBolt extends BaseRichBolt {
         String date = (String)tuple.getValueByField("date");
         int rating = (Integer)tuple.getValueByField("rating");
 
-        System.out.println(text);
-        System.out.println(type);
-        System.out.println(product);
-        System.out.println(date);
-        System.out.println(rating);
-        System.out.println();
 
         _collector.ack(tuple);
     }

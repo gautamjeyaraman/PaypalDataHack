@@ -17,9 +17,9 @@ public class ProcessorTopology {
         TopologyBuilder builder = new TopologyBuilder();
 
         builder.setSpout("twitterspout", new TwitterSpout());
-        //builder.setSpout("reviewspout", new ReviewSpout());
-        //builder.setBolt("indexreview", new SampleReviewBolt(), 1).shuffleGrouping("reviewspout");
+        builder.setSpout("reviewspout", new ReviewSpout());
         builder.setBolt("sentimentbolt", new SentimentClassifierBolt(), 1).shuffleGrouping("twitterspout");
+        builder.setBolt("sentimentbolt", new SentimentClassifierBolt(), 1).shuffleGrouping("reviewspout");
 
         return builder.createTopology();
     }

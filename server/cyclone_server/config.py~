@@ -10,13 +10,7 @@ CONFIG_FILE_PATH = None
 
 
 # FIXME: A better dirty hack
-CONFIG_FILE_MAP = {'development': 'cyclone_server.conf',
-                   'server': 'cyclone_server.production.conf'}
-
-
-def is_production():
-    path = config_file_path()
-    return 'production.conf' in path
+CONFIG_FILE_MAP = {'development': 'cyclone_server.conf'}
 
 
 def config_file_path():
@@ -26,13 +20,8 @@ def config_file_path():
     dir_name = os.path.dirname(os.path.abspath(__file__))
     while True:
         l = os.listdir(dir_name)
-        if sys.platform == 'linux2':
-            if 'disquery' in os.listdir('/home'):
-                conf_name = CONFIG_FILE_MAP.get('server')
-            else:
-                conf_name = CONFIG_FILE_MAP.get('development')
-        else:
-            conf_name = CONFIG_FILE_MAP.get('development')
+        conf_name = CONFIG_FILE_MAP.get('development')
+        
         if conf_name in l:
             return os.path.join(dir_name, conf_name)
         dir_name = os.path.abspath(os.path.join(dir_name, os.pardir))
@@ -63,26 +52,13 @@ def parse_config(filename=None):
     # web server settings
     settings["debug"] = xget(cfg.getboolean, "server", "debug", False)
     settings["xheaders"] = xget(cfg.getboolean, "server", "xheaders", False)
-    settings["xsrf_cookies"] = xget(cfg.getboolean, "server", "xsrf_cookies",
-                                    False)
-    settings["cookie_secret"] = cfg.get("server", "cookie_secret")
     settings["enable_logging"] = xget(cfg.getboolean, "server",
                                       "enable_logging", False)
-    settings["merge_files"] = xget(cfg.getboolean, "server",
-            "merge_files", False)
-    settings["enable_analytics"] = xget(cfg.getboolean, "server",
-            "enable_analytics", False)
+
     settings["enable_caching"] = xget(cfg.getboolean, "server",
             "enable_caching", False)
     settings["base_url"] = cfg.get("server", "base_url")
 
-    # bitly settings
-    if xget(cfg.getboolean, "bitly", "enabled", False):
-        settings["bitly"] = ObjectDict(
-            key=cfg.get("bitly", "key"),
-        )
-    else:
-        settings["bitly"] = None
 
     # get project's absolute path
     root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -118,11 +94,5 @@ def parse_config(filename=None):
         )
     else:
         settings["redis_settings"] = None
-
-   
-
-    # it must always return a dict
-        
-    settings['jobs'] = json.loads(cfg.get('scheduled_jobs', 'jobs'))
 
     return settings
