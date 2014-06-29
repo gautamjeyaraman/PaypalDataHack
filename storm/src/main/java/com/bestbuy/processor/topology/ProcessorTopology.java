@@ -7,6 +7,7 @@ import backtype.storm.generated.StormTopology;
 import backtype.storm.topology.TopologyBuilder;
 
 import com.bestbuy.processor.bolt.*;
+import com.bestbuy.processor.spout.ReviewSpout;
 import com.bestbuy.processor.spout.TwitterSpout;
 
 public class ProcessorTopology {
@@ -14,8 +15,9 @@ public class ProcessorTopology {
     public static StormTopology build() {
         TopologyBuilder builder = new TopologyBuilder();
 
-        builder.setSpout("twitterspout", new TwitterSpout());
-        builder.setBolt("indexreview", new SampleReviewBolt(), 1).shuffleGrouping("twitterspout");
+        //builder.setSpout("twitterspout", new TwitterSpout());
+        builder.setSpout("reviewspout", new ReviewSpout());
+        builder.setBolt("indexreview", new SampleReviewBolt(), 1).shuffleGrouping("reviewspout");
 
         return builder.createTopology();
     }

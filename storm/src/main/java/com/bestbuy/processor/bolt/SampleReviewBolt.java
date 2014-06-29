@@ -29,14 +29,14 @@ public class SampleReviewBolt extends BaseRichBolt {
         String text = (String)tuple.getValueByField("text");
         String type = (String)tuple.getValueByField("type");
         String product = (String)tuple.getValueByField("product");
-        long retweet = (Long)tuple.getValueByField("retweet");
-        long follower = (Long)tuple.getValueByField("followers");
+        String date = (String)tuple.getValueByField("date");
+        int rating = (Integer)tuple.getValueByField("rating");
 
         System.out.println(text);
         System.out.println(type);
         System.out.println(product);
-        System.out.println(retweet);
-        System.out.println(follower);
+        System.out.println(date);
+        System.out.println(rating);
         System.out.println();
 
         _collector.ack(tuple);

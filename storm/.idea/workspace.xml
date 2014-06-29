@@ -23,7 +23,7 @@
     <file path="/SubjectivityClassificationBolt.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1394628051985" ignored="false" />
     <file path="/PersistFeedBolt.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1394634585758" ignored="false" />
     <file path="/PersistEventBolt.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1396424747156" ignored="false" />
-    <file path="/fragment.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1403977258068" ignored="false" />
+    <file path="/fragment.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1404003425979" ignored="false" />
     <file path="/EventClassifier.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1397817090051" ignored="false" />
     <file path="/EventClassifierServiceFactory.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1397817187029" ignored="false" />
     <file path="/EventRecognizerBolt.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1397817711705" ignored="false" />
@@ -52,7 +52,7 @@
     <file path="/SentimentClassifierBolt.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1401880735603" ignored="false" />
     <file path="/IIndexPersistenceService.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1401885874360" ignored="false" />
     <file path="/ESIndexPersistenceService.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1401954679930" ignored="false" />
-    <file path="/IndexReviewBolt.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1404002662013" ignored="false" />
+    <file path="/IndexReviewBolt.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1404003685900" ignored="false" />
     <file path="/IndexPersistenceServiceFactory.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1401887853425" ignored="false" />
     <file path="/WishExtractorBolt.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1402297746055" ignored="false" />
     <file path="/PersistWishBolt.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1402297568212" ignored="false" />
@@ -67,7 +67,8 @@
     <file path="$PROJECT_DIR$/src/main/java/org/tataatsu/bestbuy/nlp/SentenceTokenizer.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1403971673081" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/org/tataatsu/bestbuy/redis/RedisConstants.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1403971673081" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/org/tataatsu/bestbuy/redis/ConnectionFactory.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1403971673082" ignored="false" />
-    <file path="/ProcessorTopology.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1403976074375" ignored="false" />
+    <file path="/ProcessorTopology.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1404003780842" ignored="false" />
+    <file path="/ReviewSpout.java" changelist="527a60d1-3ab3-4fdd-8d96-2efd6b9cb3da" time="1404004002033" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +132,7 @@
       <file leaf-file-name="ProcessorTopology.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/topology/ProcessorTopology.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
+            <state line="19" column="94" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,7 +141,7 @@
       <file leaf-file-name="TwitterSpout.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/spout/TwitterSpout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="19" selection-start="2171" selection-end="2171" vertical-scroll-proportion="-31.2">
+            <state line="56" column="54" selection-start="1636" selection-end="1636" vertical-scroll-proportion="-4.8">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,13 +149,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleReviewBolt.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SampleReviewBolt.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/bolt/SampleReviewBolt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="4" selection-start="479" selection-end="479" vertical-scroll-proportion="0.30116472">
+            <state line="37" column="31" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReviewSpout.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/spout/ReviewSpout.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="81" selection-start="2154" selection-end="2154" vertical-scroll-proportion="0.5572917">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,7 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/tataatsu/review/topology/ReviewProcessorTopology.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/nlp/SentenceTokenizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/redis/ConnectionFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/redis/RedisConstants.java" />
@@ -181,10 +190,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/util/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/topology/ReviewProcessorTopology.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/topology/ProcessorTopology.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/bolt/IndexReviewBolt.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/spout/TwitterSpout.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/bolt/SampleReviewBolt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/topology/ProcessorTopology.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bestbuy/processor/spout/ReviewSpout.java" />
       </list>
     </option>
   </component>
@@ -555,6 +565,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bestbuy.processor.spout" />
       <recent name="org.tataatsu.review.bolt" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -749,13 +760,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/topology/ProcessorTopology.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="50" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="34" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
@@ -842,28 +846,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/topology/ProcessorTopology.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="973" selection-end="973" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/spout/TwitterSpout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="19" selection-start="2171" selection-end="2171" vertical-scroll-proportion="-31.2">
+        <state line="56" column="54" selection-start="1636" selection-end="1636" vertical-scroll-proportion="-4.8">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/topology/ProcessorTopology.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="94" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/bolt/SampleReviewBolt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="479" selection-end="479" vertical-scroll-proportion="0.30116472">
+        <state line="37" column="31" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bestbuy/processor/spout/ReviewSpout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="81" selection-start="2154" selection-end="2154" vertical-scroll-proportion="0.5572917">
+          <folding />
         </state>
       </provider>
     </entry>
