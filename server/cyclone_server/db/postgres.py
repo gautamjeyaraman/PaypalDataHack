@@ -964,3 +964,19 @@ class PostgresDatabase(object):
             query._GET_ARTICLE_WITH_DATE_RANGE, (start_date,)).\
             addCallback(self._got_article).\
             addErrback(lambda x : False)
+
+    def get_list_of_merchant(self):
+        return self.connection.runQuery(
+            query._GET_LIST_OF_MERCHANT)./
+            addCallback(self._got_merchant_list)
+            
+    def _got_merchant(self, rows):
+        l = []
+        if rows:
+            for row in rows:
+                l.append({'id': row.id, 'merchant_name': name,
+                         'merchant_sentiment' : sentiment, 'merchant_count' :count})
+        return l
+                
+    
+
