@@ -180,7 +180,8 @@ _GET_TEMP_FILE =\
 _GET_TEMP_FILE_BY_PARENT_GUID =\
     'SELECT * FROM TempFIle WHERE parent_guid = %s'
 
-GET_WATCH_WORDS =\
+_GET_WATCH_WORDS =\
+    'SELECT 8 FROM Merchant'
     'SELECT * FROM watchkeyword WHERE person_id = %s ORDER BY type'
     
 ADD_WATCH_WORD =\
