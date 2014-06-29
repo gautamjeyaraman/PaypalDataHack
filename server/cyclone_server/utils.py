@@ -74,13 +74,6 @@ class BaseHandler(cyclone.web.RequestHandler):
             return r_client_ip
 
 
-def incrementPageView(method):
-    @functools.wraps(method)
-    def wrapper(self, *args, **kwargs):
-        return method(self, *args, **kwargs)
-    return wrapper
-
-
 class TornadoMultiDict(object):
     def __init__(self, handler):
         self.handler = handler

@@ -13,25 +13,6 @@ import java.util.Locale;
 
 public class Util {
 
-    public static String decrypt(String strToDecrypt)
-    {
-        try
-        {
-            String private_key = "tataatsudisquery";
-            final byte[] key = private_key.getBytes();
-            Cipher cipher = Cipher.getInstance("AES/ECB/NOPADDING");
-            final SecretKeySpec secretKey = new SecretKeySpec(key, "AES");
-            cipher.init(Cipher.DECRYPT_MODE, secretKey);
-            String decryptedString = new String(cipher.doFinal(Base64.decodeBase64(strToDecrypt)));
-            return decryptedString.trim();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     public static boolean isDateWithinDuration(DateTime dateTime, String cutoffDuration) {
         Period p = parsePeriod(cutoffDuration);
         return isDateWithinDuration(dateTime, p);

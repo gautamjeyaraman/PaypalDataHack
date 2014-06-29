@@ -4,9 +4,8 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import redis.clients.jedis.Jedis;
 
-/**
- * tataatsu1     03/04/14 9:26 PM
- */
+
+
 public class HashGenerator {
 
     public static String generateHash(String message) throws Exception{

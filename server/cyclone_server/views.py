@@ -2,7 +2,7 @@ import re
 from cyclone_server.db.postgres import PostgresDatabase
 from twisted.internet import defer
 from cyclone_server import utils
-from cyclone_server.utils import BaseHandler, incrementPageView
+from cyclone_server.utils import BaseHandler
 from cyclone_server.db.mixin import DatabaseMixin
 
 class IndexHandler(BaseHandler, DatabaseMixin):
@@ -12,11 +12,11 @@ class IndexHandler(BaseHandler, DatabaseMixin):
     def get(self):
         db = PostgresDatabase(self)
         Merchant_lists = yield self.database.get_list_of_merchant()
-        self.render("voc_dashboard.html", Merchant_lists = Merchant_lists)
+        self.render("dashboard.html", Merchant_lists = Merchant_lists)
 
 class MerchentDashBoarHandler(BaseHandler, DatabaseMixin):
     is_MerchentDashBoarHandler = True
-           
+    
     @defer.inlineCallbacks
     def Merchant_page(self, merchant_id):
         db = PostgresDatabase(self)

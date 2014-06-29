@@ -4,9 +4,7 @@ import java.util.Map;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
-/**
- * tataatsu1     03/04/14 1:54 PM
- */
+
 public class ConnectionFactory {
     private String host;
     private int port;

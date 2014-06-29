@@ -11,9 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
-/**
- * Created by vinays on 12/02/14.
- */
+
 public class SampleReviewBolt extends BaseRichBolt {
     private OutputCollector _collector;
     private Map conf;
@@ -29,15 +27,9 @@ public class SampleReviewBolt extends BaseRichBolt {
         String text = (String)tuple.getValueByField("text");
         String type = (String)tuple.getValueByField("type");
         String product = (String)tuple.getValueByField("product");
-        long retweet = (Long)tuple.getValueByField("retweet");
-        long follower = (Long)tuple.getValueByField("followers");
+        String date = (String)tuple.getValueByField("date");
+        int rating = (Integer)tuple.getValueByField("rating");
 
-        System.out.println(text);
-        System.out.println(type);
-        System.out.println(product);
-        System.out.println(retweet);
-        System.out.println(follower);
-        System.out.println();
 
         _collector.ack(tuple);
     }
