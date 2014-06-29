@@ -19,6 +19,7 @@ from zope.interface import implements
 from twisted.internet import reactor
 from thrift.transport import TTwisted
 from sentimentClassifier import SentimentClassifier
+from sentiment_analyser import *
 
 
 class TextProcessorHandler:
@@ -29,9 +30,11 @@ class TextProcessorHandler:
         self.sentimentClassifier = SentimentClassifier()
         #logger.info("TextProcessorHandler initialized..")
 
-    def infer_sentimentType(self, DocText):
+    def infer_sentiment(self, DocText):
         #logger.info("Sentiment type for : " + DocText)
-        retVal = self.sentimentClassifier.infer_sentiment(DocText)
+        retVal = infer_sentiment(DocText)
+        print DocText
+        print retVal
         return retVal
 
 try:

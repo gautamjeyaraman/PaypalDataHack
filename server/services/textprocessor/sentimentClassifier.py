@@ -48,7 +48,7 @@ class SentimentClassifier():
 
                 if clsf is "naivebayes":
                     classifier = NaiveBayesClassifier.train(trainfeats)
-                else if clsf is "maxent":
+                elif clsf is "maxent":
                     classifier = MaxentClassifier.train(trainfeats, algorithm='iis', trace=0, max_iter=10)
 
                 print 'accuracy:', nltk.classify.util.accuracy(classifier, testfeats)
@@ -59,16 +59,12 @@ class SentimentClassifier():
                 with open(classifier_path, "r") as fh:
                     classifier = cPickle.load(fh)
             self.classifier = classifier
-            logger.info("Initialized SentimentClassifier instance..")
         except Exception, e:
-            logger.exception(e)
             raise e
     
     def infer_sentiment(self, text):
         try:
             machine_guess = self.classifier.prob_classify(word_feats(tokenizer.tokenize(text.lower())))
-            logger.info("Sentence:%s ## Sentiment Guess: positive = %s and negative = %s" % (text, machine_guess.prob('1'), machine_guess.prob('0')))
             return int(machine_guess.prob('1') * 100)
         except Exception, e:
-            logger.exception(e)
             raise e 

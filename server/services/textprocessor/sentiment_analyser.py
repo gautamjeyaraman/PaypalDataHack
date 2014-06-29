@@ -3,7 +3,8 @@ import json
 from twisted.internet import defer
 
 import sentimentClassifier
-from cyclone_server import httpclient
+from cyclone import httpclient
+import requests
 
 
 def infer_sentiment_maxent(text):
@@ -17,15 +18,15 @@ def infer_sentiment_naivebayes(text):
 	return naivebayes_classifier.infer_sentiment(text)
 
 def infer_sentiment_lingpipe(text):
-	url = "http://localhost:8080/analyse_sentiment"
-	params = {"text":text}
-	client = httpclient.HttpClient()
-	return client.fetch(url, method="POST" postdsata=json.dumps(params))
+    url = "http://localhost:8080/analyse_sentiment"
+    params = {"text":text}
+    res = requests.post(url, data=json.dumps(params), headers={'Content-Type': 'application/json'})
+    return res.json()
 
 def infer_sentiment(text):
 	#Get average of all values
 	r1 = infer_sentiment_maxent(text)
 	r2 = infer_sentiment_naivebayes(text)
 	r3 = infer_sentiment_lingpipe(text)
-	res = defer.DeferredList([r1,r2,r3]).addCallback(lambda x: int((x[0]+x[1]+x[2])/3))
+	res = int((x[0]+x[1])/2)
 	return res
