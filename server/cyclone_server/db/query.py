@@ -180,8 +180,7 @@ _GET_TEMP_FILE =\
 _GET_TEMP_FILE_BY_PARENT_GUID =\
     'SELECT * FROM TempFIle WHERE parent_guid = %s'
 
-_GET_WATCH_WORDS =\
-    'SELECT 8 FROM Merchant'
+GET_WATCH_WORDS =\
     'SELECT * FROM watchkeyword WHERE person_id = %s ORDER BY type'
     
 ADD_WATCH_WORD =\
@@ -430,3 +429,7 @@ _GET_ARTICLE_WITH_DATE_RANGE =\
     ' sentence_id, ase.lexicon_acq, ase.lexicon_vnsp, ase.lexicon_nc, ase.lexicon_job FROM Article a'\
     ' INNER JOIN ArticleSentence ase ON a.id = ase.article_id WHERE a.id = (Select id from article'\
     ' where a.article_date::date = %s ORDER BY a.article_date LIMIT 1);'
+    
+_GET_LIST_OF_MERCHANT =\
+    'SELECT * FROM Merchant;'   
+

@@ -10,7 +10,8 @@ class IndexHandler(BaseHandler, DatabaseMixin):
     
     @defer.inlineCallbacks
     def get(self):
-        Merchant_lists = PostgresDatabase.get_list_of_merchant()
+        db = PostgresDatabase(self)
+        Merchant_lists = self.database.get_list_of_merchant()
         self.render("voc_dashboard.html", Merchant_lists = Merchant_lists)
         
     @defer.inlineCallbacks
